@@ -16,7 +16,8 @@ namespace BlazingPizza.Client
 
             //builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddHttpClient<PizzaClient>(client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
-                //.AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+            //.AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+            builder.Services.AddScoped<OrderState>();
 
             await builder.Build().RunAsync();
         }

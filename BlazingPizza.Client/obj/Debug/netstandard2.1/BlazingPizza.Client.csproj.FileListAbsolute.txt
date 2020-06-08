@@ -408,6 +408,6 @@ C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\n
 C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.br
 C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.br
 C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll.br
-C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\3j8B2ChQLSsD0-uM8P4feBB8Mi94_aZtkOd0XnjbyZM=.hash
-C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\tj5jZAtRfnY7C4MMmitKOYuEKzX5oPFpMSv4JmgPn9w=.hash
-C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\fktcPrfHuydsEPDKjfZfDCSBXHwyHjwlvXzItZlrWW4=.hash
+C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\RhDLCy9FVo1siq-1LU8Nq_ojyBRVD8R_iDyzCcgAic0=.hash
+C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\4IgcM3fjGqweZZdVaCUCB5FlIY1kObt8g_RjfbXn9Jk=.hash
+C:\Users\mschleifer\source\personal\BlazingPizza\BlazingPizza.Client\obj\Debug\netstandard2.1\integrity\Ig26s2FdMHB-aMBG46Gt_t6g9ImTuqDFQdTLANHeMYQ=.hash
