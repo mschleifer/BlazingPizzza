@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.Shared\\BlazingPizza.Shared.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\BlazingPizza.ComponentsLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\BlazingPizza.ComponentsLibrary.csproj",
+        "projectName": "BlazingPizza.ComponentsLibrary",
+        "projectPath": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\BlazingPizza.ComponentsLibrary.csproj",
+        "packagesPath": "C:\\Users\\mschleifer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mschleifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://wams.doit.wisc.edu:443/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015135\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.Shared\\BlazingPizza.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.Shared\\BlazingPizza.Shared.csproj",
+        "projectName": "BlazingPizza.Shared",
+        "projectPath": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.Shared\\BlazingPizza.Shared.csproj",
+        "packagesPath": "C:\\Users\\mschleifer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mschleifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://wams.doit.wisc.edu:443/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\BlazingPizza.ComponentsLibrary.csproj": {
+                "projectPath": "C:\\Users\\mschleifer\\source\\personal\\BlazingPizza\\BlazingPizza.ComponentsLibrary\\BlazingPizza.ComponentsLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015135\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
