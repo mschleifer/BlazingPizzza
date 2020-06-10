@@ -1,0 +1,37 @@
+﻿@page "/checkout"
+@inject OrderState OrderState
+@inject PizzaClient HttpClient
+@inject NavigationManager NavigationManager
+
+<div class="main">
+    <EditForm Model="OrderState.ActiveOrder.DeliveryAddress" OnValidSubmit="PlaceOrder">
+        <div class="checkout-cols">
+            <div class="checkout-order-details">
+                <h4>Review order</h4>
+                <OrderReview Order="OrderState.ActiveOrder" />
+            </div>
+            <div class="checkout-delivery-address">
+                <h4>Deliver to...</h4>
+                <AddressEditor Address="OrderState.ActiveOrder.DeliveryAddress" />
+            </div>
+        </div>
+        <button type="submit" class="checkout-button btn btn-warning" disabled="@(IsSubmitting)">
+            Place order
+        </button>
+
+        <DataAnnotationsValidator />
+    </EditForm>
+</div>
+
+@code {
+    bool IsSubmitting = false;
+    async Task PlaceOrder()
+    {
+        IsSubmitting = true;
+        var orderId = await HttpClient.PlaceOrder(OrderState.ActiveOrder);
+        IsSubmitting = false;
+
+        OrderState.ResetOrder();
+        NavigationManager.NavigateTo($"/myorders/{orderId}");
+    }
+}
