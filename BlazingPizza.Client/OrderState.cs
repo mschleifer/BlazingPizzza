@@ -41,6 +41,11 @@ namespace BlazingPizza.Client
             ActiveOrder = new Order();
         }
 
+        public void ReplaceOrder(Order order)
+        {
+            ActiveOrder = order;
+        }
+
         public void RemoveConfiguredPizza(Pizza pizza)
         {
             ActiveOrder.Pizzas.Remove(pizza);

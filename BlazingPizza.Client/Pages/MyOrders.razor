@@ -1,5 +1,5 @@
 ﻿@page "/myorders"
-@inject PizzaClient MyClient
+@inject OrdersClient MyClient
 
 <div class="main">
     @if (ordersWithStatus == null)
@@ -42,6 +42,12 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        ordersWithStatus = await MyClient.GetOrders();
+        try {
+            ordersWithStatus = await MyClient.GetOrders();
+        }
+        catch (AccessTokenNotAvailableException ex)
+        {
+            ex.Redirect();
+        }
     }
 }

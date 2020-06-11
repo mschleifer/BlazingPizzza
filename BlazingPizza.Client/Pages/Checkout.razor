@@ -1,7 +1,8 @@
 ﻿@page "/checkout"
 @inject OrderState OrderState
-@inject PizzaClient HttpClient
+@inject OrdersClient HttpClient
 @inject NavigationManager NavigationManager
+@attribute [Authorize]
 
 <div class="main">
     <EditForm Model="OrderState.ActiveOrder.DeliveryAddress" OnValidSubmit="PlaceOrder">
@@ -28,10 +29,18 @@
     async Task PlaceOrder()
     {
         IsSubmitting = true;
-        var orderId = await HttpClient.PlaceOrder(OrderState.ActiveOrder);
-        IsSubmitting = false;
+        try
+        {
+            var orderId = await HttpClient.PlaceOrder(OrderState.ActiveOrder);
 
-        OrderState.ResetOrder();
-        NavigationManager.NavigateTo($"/myorders/{orderId}");
+            IsSubmitting = false;
+
+            OrderState.ResetOrder();
+            NavigationManager.NavigateTo($"/myorders/{orderId}");
+        }
+        catch (AccessTokenNotAvailableException ex)
+        {
+            ex.Redirect();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿@inject PizzaClient PizzaClient
+﻿@inject PublicClient HttpClient
 
 <div class="dialog-container">
     <div class="dialog">
@@ -68,7 +68,7 @@
 
     protected async override Task OnInitializedAsync()
     {
-        toppings = await PizzaClient.GetToppings();
+        toppings = await HttpClient.GetToppings();
     }
 
     void ToppingSelected(ChangeEventArgs e)

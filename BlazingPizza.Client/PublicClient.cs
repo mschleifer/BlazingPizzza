@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace BlazingPizza.Client
 {
-    public class PizzaClient
+    public class PublicClient
     {
         private readonly HttpClient httpClient;
 
-        public PizzaClient(HttpClient httpClient)
+        public PublicClient(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }
@@ -19,22 +19,6 @@ namespace BlazingPizza.Client
 
         public async Task<List<Topping>> GetToppings() =>
             await httpClient.GetFromJsonAsync<List<Topping>>("toppings");
-
-        public async Task<IEnumerable<OrderWithStatus>> GetOrders() =>
-            await httpClient.GetFromJsonAsync<IEnumerable<OrderWithStatus>>("orders");
-
-
-        public async Task<OrderWithStatus> GetOrder(int orderId) =>
-            await httpClient.GetFromJsonAsync<OrderWithStatus>($"orders/{orderId}");
-
-
-        public async Task<int> PlaceOrder(Order order)
-        {
-            var response = await httpClient.PostAsJsonAsync("orders", order);
-            response.EnsureSuccessStatusCode();
-            var orderId = await response.Content.ReadFromJsonAsync<int>();
-            return orderId;
-        }
 
         public async Task SubscribeToNotifications(NotificationSubscription subscription)
         {
