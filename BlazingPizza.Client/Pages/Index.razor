@@ -2,6 +2,7 @@
 @inject PublicClient HttpClient
 @inject OrderState OrderState
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSInterop
 
 <div class="main">
     <ul class="pizza-cards">
@@ -35,7 +36,7 @@
 
             @foreach (var configuredPizza in OrderState.ActiveOrder.Pizzas)
             {
-                <ConfiguredPizzaItem Pizza="configuredPizza" OnRemoved="@(() => OrderState.RemoveConfiguredPizza(configuredPizza))" />
+                <ConfiguredPizzaItem Pizza="configuredPizza" OnRemoved="@(() => RemovePizza(configuredPizza))" />
             }
         </div>
     }
@@ -59,5 +60,13 @@
     protected override async Task OnInitializedAsync()
     {
         specials = await HttpClient.GetSpecials();
+    }
+
+    async Task RemovePizza(Pizza configuredPizza)
+    {
+        if(await JSInterop.Confirm($"Remove {configuredPizza.Special.Name} pizza from your order?"))
+        {
+            OrderState.RemoveConfiguredPizza(configuredPizza);
+        }
     }
 }
