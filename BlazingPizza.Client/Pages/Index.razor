@@ -20,12 +20,11 @@
             }
         }
 
-        @if (OrderState.ShowingConfigureDialog)
-        {
+        <TemplatedDialog Show="OrderState.ShowingConfigureDialog">
             <ConfigurePizzaDialog Pizza="OrderState.ConfiguringPizza"
                                   OnCancel="OrderState.CancelConfigurePizzaDialog"
                                   OnConfirm="OrderState.ConfirmConfigurePizzaDialog" />
-        }
+        </TemplatedDialog>
     </ul>
 </div>
 <div class="sidebar">
@@ -64,7 +63,7 @@
 
     async Task RemovePizza(Pizza configuredPizza)
     {
-        if(await JSInterop.Confirm($"Remove {configuredPizza.Special.Name} pizza from your order?"))
+        if (await JSInterop.Confirm($"Remove {configuredPizza.Special.Name} pizza from your order?"))
         {
             OrderState.RemoveConfiguredPizza(configuredPizza);
         }
