@@ -18,12 +18,6 @@ namespace BlazingPizza.Client
             await httpClient.GetFromJsonAsync<List<PizzaSpecial>>("specials");
 
         public async Task<List<Topping>> GetToppings() =>
-            await httpClient.GetFromJsonAsync<List<Topping>>("toppings");
-
-        public async Task SubscribeToNotifications(NotificationSubscription subscription)
-        {
-            var response = await httpClient.PostAsJsonAsync("notifications/subscribe", subscription);
-            response.EnsureSuccessStatusCode();
-        }
+            await httpClient.GetFromJsonAsync<List<Topping>>("toppings");        
     }
 }

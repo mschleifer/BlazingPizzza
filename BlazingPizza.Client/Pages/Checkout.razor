@@ -1,6 +1,7 @@
 ﻿@page "/checkout"
 @inject OrderState OrderState
 @inject OrdersClient HttpClient
+@inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 @attribute [Authorize]
 
@@ -26,6 +27,13 @@
 
 @code {
     bool IsSubmitting = false;
+
+    protected override void OnInitialized()
+    {
+        // In the background, ask if they want to be notified about order updates
+        _ = RequestNotificationSubscriptionAsync();
+    }
+
     async Task PlaceOrder()
     {
         IsSubmitting = true;
@@ -41,6 +49,22 @@
         catch (AccessTokenNotAvailableException ex)
         {
             ex.Redirect();
+        }
+    }
+
+    async Task RequestNotificationSubscriptionAsync()
+    {
+        var subscription = await JSRuntime.InvokeAsync<NotificationSubscription>("blazorPushNotifications.requestSubscription");
+        if (subscription != null)
+        {
+            try
+            {
+                await HttpClient.SubscribeToNotifications(subscription);
+            }
+            catch (AccessTokenNotAvailableException ex)
+            {
+                ex.Redirect();
+            }
         }
     }
 }
