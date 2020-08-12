@@ -31,8 +31,6 @@
 </div>
 
 @code {
-    IEnumerable<OrderWithStatus> ordersWithStatus;
-
     async Task<IEnumerable<OrderWithStatus>> LoadOrders()
     {
         var ordersWithStatus = Enumerable.Empty<OrderWithStatus>();
